@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import rockImage from '../assets/rock.png'; // Replace with your actual path
+import paperImage from '../assets/paper.png'; // Replace with your actual path
+import scissorsImage from '../assets/scissors.png'; // Replace with your actual path
 import './Game.css';  // Import the custom styles
 
-const choices = ['Rock', 'Paper', 'Scissors'];
+const choices = [
+  { name: 'Rock', image: rockImage },
+  { name: 'Paper', image: paperImage },
+  { name: 'Scissors', image: scissorsImage }
+];
 
 const Game = () => {
   const { state } = useLocation();
@@ -85,26 +92,26 @@ const Game = () => {
           <div className="choice-container">
             <div className="player-choice">
               <h4>{player1}'s Choice</h4>
-              {choices.map((choice) => (
+              {choices.map(({ name, image }) => (
                 <button
-                  key={choice}
-                  className={`choice-button ${choice}`} // Add class for specific choice
-                  onClick={() => setPlayer1Choice(choice)}
+                  key={name}
+                  className={`choice-button ${name}`} // Add class for specific choice
+                  onClick={() => setPlayer1Choice(name)}
                 >
-                  {choice}
+                  <img src={image} alt={name} className="choice-image" />
                 </button>
               ))}
             </div>
 
             <div className="player-choice">
               <h4>{player2}'s Choice</h4>
-              {choices.map((choice) => (
+              {choices.map(({ name, image }) => (
                 <button
-                  key={choice}
-                  className={`choice-button ${choice}`} // Add class for specific choice
-                  onClick={() => setPlayer2Choice(choice)}
+                  key={name}
+                  className={`choice-button ${name}`} // Add class for specific choice
+                  onClick={() => setPlayer2Choice(name)}
                 >
-                  {choice}
+                  <img src={image} alt={name} className="choice-image" />
                 </button>
               ))}
             </div>

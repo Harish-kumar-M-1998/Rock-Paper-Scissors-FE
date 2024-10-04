@@ -4,20 +4,20 @@
     --background-color: #f8f9fa;
     --text-color: #343a40;
     --button-hover: #0056b3;
-  }
-  
-  * {
+}
+
+* {
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-  }
-  
-  .game-container {
+}
+
+.game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,54 +25,56 @@
     min-height: 100vh;
     padding: 20px;
     animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  .round-title {
+}
+
+.round-title {
     font-size: 2rem;
     margin-bottom: 20px;
     animation: slideIn 0.6s ease-in-out;
-  }
-  
-  .players {
+}
+
+.players {
     font-size: 1.5rem;
     margin-bottom: 30px;
     animation: slideIn 0.6s ease-in-out;
-  }
-  
-  .choice-container {
+}
+
+.choice-container {
     display: flex;
     justify-content: center;
     gap: 50px;
     margin-bottom: 30px;
     flex-wrap: wrap;
     animation: bounceIn 0.6s ease-in-out;
-  }
-  
-  .player-choice {
+}
+
+.player-choice {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .choice-button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
+}
+
+.choice-button {
+    padding: 10px;
     margin: 10px 0;
     cursor: pointer;
-    background-color: var(--primary-color);
-    color: #fff;
     border: none;
     border-radius: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: transform 0.2s ease;
     animation: pulse 1s infinite;
-  }
-  
-  .choice-button:hover {
-    background-color: var(--button-hover);
+}
+
+.choice-button:hover {
     transform: scale(1.1);
-  }
-  
-  .submit-button {
+}
+
+.choice-image {
+    width: 80px; /* Adjust size */
+    height: 80px; /* Adjust size */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.submit-button {
     padding: 10px 30px;
     font-size: 1.2rem;
     margin: 20px 0;
@@ -83,26 +85,26 @@
     border-radius: 10px;
     transition: background-color 0.3s ease;
     animation: slideInUp 0.7s ease-in-out;
-  }
-  
-  .submit-button:hover {
+}
+
+.submit-button:hover {
     background-color: var(--button-hover);
-  }
-  
-  .result {
+}
+
+.result {
     font-size: 1.5rem;
     margin-top: 20px;
     animation: fadeIn 1s ease-in-out;
-  }
-  
-  .game-over {
+}
+
+.game-over {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 20px;
     animation: bounceIn 0.6s ease-in-out;
-  }
-  
-  .scoreboard-button {
+}
+
+.scoreboard-button {
     padding: 10px 30px;
     font-size: 1.2rem;
     cursor: pointer;
@@ -112,104 +114,92 @@
     border-radius: 10px;
     transition: background-color 0.3s ease;
     animation: bounceIn 0.6s ease-in-out;
-  }
-  
-  .scoreboard-button:hover {
+}
+
+.scoreboard-button:hover {
     background-color: #5a6268;
-  }
-  
-  /* Keyframe animations */
-  @keyframes fadeIn {
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
     from {
-      opacity: 0;
+        opacity: 0;
     }
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  @keyframes slideIn {
+}
+
+@keyframes slideIn {
     from {
-      transform: translateY(-50px);
-      opacity: 0;
+        transform: translateY(-50px);
+        opacity: 0;
     }
     to {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
-  
-  @keyframes slideInUp {
+}
+
+@keyframes slideInUp {
     from {
-      transform: translateY(50px);
-      opacity: 0;
+        transform: translateY(50px);
+        opacity: 0;
     }
     to {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
-  
-  @keyframes bounceIn {
+}
+
+@keyframes bounceIn {
     from {
-      transform: scale(0.8);
-      opacity: 0;
+        transform: scale(0.8);
+        opacity: 0;
     }
     to {
-      transform: scale(1);
-      opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
-  }
-  
-  @keyframes pulse {
+}
+
+@keyframes pulse {
     0%, 100% {
-      transform: scale(1);
+        transform: scale(1);
     }
     50% {
-      transform: scale(1.05);
+        transform: scale(1.05);
     }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .choice-container {
-      flex-direction: column;
-      gap: 20px;
+        flex-direction: column;
+        gap: 20px;
     }
-  
+
     .choice-button,
     .submit-button,
     .scoreboard-button {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .round-title,
     .players {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  
+
     .choice-button,
     .submit-button,
     .scoreboard-button {
-      font-size: 1rem;
-      padding: 8px 15px;
+        font-size: 1rem;
+        padding: 8px 15px;
     }
-  
+
     .result {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  }
-  .choice-button.Rock {
-    background-color: #5b0505 ; /* Light steel blue */
-  }
-  
-  .choice-button.Paper {
-    background-color: #0c7a9e; /* Light blue */
-  }
-  
-  .choice-button.Scissors {
-    background-color: #f15e74; /* Light pink */
-  }
- 
+}
