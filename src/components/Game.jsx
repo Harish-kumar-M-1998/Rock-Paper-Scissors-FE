@@ -20,9 +20,9 @@ const Game = () => {
   const decideWinner = () => {
     if (player1Choice === player2Choice) return 'Tie';
     if (
-      (player1Choice === 'stone' && player2Choice === 'scissors') ||
-      (player1Choice === 'scissors' && player2Choice === 'paper') ||
-      (player1Choice === 'paper' && player2Choice === 'stone')
+      (player1Choice === 'Rock' && player2Choice === 'Scissors') ||
+      (player1Choice === 'Scissors' && player2Choice === 'Paper') ||
+      (player1Choice === 'Paper' && player2Choice === 'Rock')
     ) {
       return 'Player 1 Wins!';
     }
