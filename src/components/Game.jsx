@@ -59,7 +59,7 @@ const Game = () => {
 
       // Save the game to the database
       try {
-        await axios.post('http://localhost:5000/api/games', {
+        await axios.post('https://rock-paper-scissors-be.onrender.com/api/games', {
           player1,
           player2,
           rounds: [...rounds, roundData],

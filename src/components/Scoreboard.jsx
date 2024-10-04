@@ -6,7 +6,7 @@ const Scoreboard = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/games').then((response) => setGames(response.data));
+    axios.get('https://rock-paper-scissors-be.onrender.com/api/games').then((response) => setGames(response.data));
   }, []);
 
   return (
