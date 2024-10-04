@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PlayerForm.css';  // Importing the custom styles
+import gameIcon from '../assets/rp.png'; // Replace with the actual path to your image
 
 const PlayerForm = () => {
   const [player1, setPlayer1] = useState('');
@@ -15,6 +16,7 @@ const PlayerForm = () => {
 
   return (
     <div className="form-container">
+      <img src={gameIcon} alt="Game Icon" className="rotating-image" /> {/* Rotating Image */}
       <h2 className="form-title">Enter Player Names</h2>
       <input
         type="text"
