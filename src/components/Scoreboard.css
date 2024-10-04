@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #0e65c3;
+    --secondary-color: #6c757d;
+    --winner-color: #28a745;
+    --loser-color: #dc3545;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .scoreboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--background-color);
+    min-height: 100vh;
+  }
+  
+  .scoreboard-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .games-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .game-item {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .game-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .players {
+    font-weight: bold;
+  }
+  
+  .vs {
+    margin: 0 5px;
+    color: var(--secondary-color);
+  }
+  
+  .winner {
+    color: var(--winner-color);
+    font-style: italic;
+  }
+  
+  .date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-style: italic;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .scoreboard-title {
+      font-size: 2rem;
+    }
+  
+    .game-item {
+      padding: 10px;
+    }
+  
+    .game-info {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .scoreboard-title {
+      font-size: 1.5rem;
+    }
+  
+    .game-info {
+      font-size: 0.9rem;
+    }
+  }
+  
