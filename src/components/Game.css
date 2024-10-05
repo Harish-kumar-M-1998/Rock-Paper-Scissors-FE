@@ -173,13 +173,24 @@ body {
 }
 
 /* Responsive Design */
+/* Responsive Design */
 @media (max-width: 768px) {
     .choice-container {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;  /* Adjust gap for larger screens */
     }
 
-    .choice-button,
+    .choice-button {
+        width: 60px;  /* Adjusted size */
+        height: 60px; /* Adjusted size */
+    }
+
+    .choice-image {
+        width: 50px;  /* Adjust image size for larger screens */
+        height: 50px; /* Adjust image size */
+    }
+
     .submit-button,
     .scoreboard-button {
         width: 100%;
@@ -192,7 +203,23 @@ body {
         font-size: 1.2rem;
     }
 
-    .choice-button,
+    .choice-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;  /* Increased gap to avoid overlap */
+    }
+
+    .choice-button {
+        width: 50px;  /* Further reduced button size */
+        height: 50px; /* Further reduced button size */
+    }
+
+    .choice-image {
+        width: 35px;  /* Reduced image size further */
+        height: 35px; /* Reduced image size */
+    }
+
     .submit-button,
     .scoreboard-button {
         font-size: 1rem;
